@@ -27,7 +27,7 @@ emailID: {
     allowNull: false,
   },
 photo:{
-    type:DataTypes.BLOB,
+    type:DataTypes.LONGTEXT,
     allowNull: false,
   },
 cardID:{
