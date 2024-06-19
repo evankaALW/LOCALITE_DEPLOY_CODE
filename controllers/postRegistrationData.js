@@ -23,6 +23,27 @@
        }
 
      else{
+       // let photoUrl = '';
+       // if (photo) {
+       //    // Read the file from the temporary location
+       //    const fileContent = fs.readFileSync(photo.path);
+
+       //    // Set up the parameters for the S3 upload
+       //    const params = {
+       //      Bucket: process.env.S3_BUCKET_NAME,
+       //      Key: `${Date.now()}_${photo.originalname}`, // File name you want to save as in S3
+       //      Body: fileContent,
+       //      ContentType: photo.mimetype,
+       //      ACL: 'public-read', // Optional: make the file publicly readable
+       //    };
+
+       //    // Upload the file to S3
+       //    const data = await s3.upload(params).promise();
+       //    photoUrl = data.Location;
+
+       //    // Clean up the uploaded file from the local storage
+       //    fs.unlinkSync(photo.path);
+       //  }
        if(brandID){
          console.log("brandID : ",brandID)
          console.log("req", req.body)
