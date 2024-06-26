@@ -4,7 +4,7 @@
  const postRegistrationData ={
      postRegistration: async (req, res,next) => {
      var brandID, theatreID;
-     const { userName, dateOfBirth, phoneNumber, emailID, photo, cardID, address, pinCode, languageSpoken, loginPIN, brand, city, theatre, pinCodesForAllocation
+     const { userName, dateOfBirth, phoneNumber, emailID, photo, cardID, address, pinCode, languageSpoken, loginPIN, activate, brand, city, theatre, pinCodesForAllocation
    } = req.body;
 
    try {
@@ -45,10 +45,22 @@
        //    fs.unlinkSync(photo.path);
        //  }
        if(brandID){
+             // Make the GET request to the external API
+             const theatreDataResponse = await axios.get('http://62.72.59.146:3005/theatredata');
+             const theatreData = theatreDataResponse.data; 
+            // Iterate through the theatre data and compare pin codes
+            for (let i = 0; i < theatreData.length; i++) {
+              const theatre = theatreData[i];
+              if (theatre.theatrePinCode == pinCode) {
+                theatreID = theatre.theatreId;
+                break; // Break the loop once a match is found
+              }
+            }
+            console.log(theatreID);
          console.log("brandID : ",brandID)
          console.log("req", req.body)
-         const queryTwo = `INSERT INTO userTable ( id, userName, dateOfBirth, phoneNumber, emailID, photo, cardID, address, city, pinCode, languageSpoken, loginPIN, brandID, theatreID, dateTime, isDeleted, createdAt, updatedAt )
-     VALUES ( null, '${userName}', '${dateOfBirth}', ${phoneNumber}, '${emailID}', '${photo}', ${cardID}, '${address}', '${city}', ${pinCode}, '${languageSpoken}', '${loginPIN}', ${brandID}, 1, CONVERT_TZ(NOW(), '+00:00', '+05:30'), false, CONVERT_TZ(NOW(), '+00:00', '+05:30'), CONVERT_TZ(NOW(), '+00:00', '+05:30'))`;
+         const queryTwo = `INSERT INTO userTable ( id, userName, dateOfBirth, phoneNumber, emailID, photo, cardID, address, city, pinCode, languageSpoken, loginPIN, brandID, theatreID, dateTime, isDeleted, activate, createdAt, updatedAt )
+     VALUES ( null, '${userName}', '${dateOfBirth}', ${phoneNumber}, '${emailID}', '${photo}', ${cardID}, '${address}', '${city}', ${pinCode}, '${languageSpoken}', '${loginPIN}', ${brandID}, ${theatreID}, CONVERT_TZ(NOW(), '+00:00', '+05:30'), false, ${activate}, CONVERT_TZ(NOW(), '+00:00', '+05:30'), CONVERT_TZ(NOW(), '+00:00', '+05:30'))`;
 
      const [result, metadata ]= await connection.query(queryTwo);
      const userId = result;
