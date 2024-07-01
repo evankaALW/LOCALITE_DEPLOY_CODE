@@ -1,6 +1,6 @@
  const connection = require('../config/db'); // Assuming you have a database configuration file
  const SECRET_KEY = "loginSuccessfulStreeS";//add in .env file
-
+//post request to enter user details into userTable after submitting the data in the registration form
  const postRegistrationData ={
      postRegistration: async (req, res,next) => {
      var brandID, theatreID;
@@ -22,7 +22,7 @@
          return res.status(409).json({ error: "Cannot enter duplicate entry of User name , Phone Number or Email ID" });
        }
 
-     else{
+     else{//commented the code for uploading the photo to the AWS S3 bucket since creedentials are not ready
        // let photoUrl = '';
        // if (photo) {
        //    // Read the file from the temporary location
