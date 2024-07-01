@@ -3,7 +3,7 @@
 const {DataTypes} = require("sequelize")
 const seque = require('../config/db')
 
-
+//transactionTable - to store the transaction entries after the users have played the activity cashback game
 const transactionTable = seque.define('transactionTable', {
     id:{
         type:DataTypes.INTEGER,
