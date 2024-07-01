@@ -1,5 +1,5 @@
 const connection = require('../config/db');
-
+//PUT request to update the cashback points of the user after they have played the game on the app
 const updateWalletAfterGame = {
     updateWalletData: async (req, res,next) => {
         const { id } = req.params; 
