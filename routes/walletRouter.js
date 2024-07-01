@@ -1,3 +1,6 @@
+//ROUTER TO HANDLE THE REQUESTS RELATED TO THE walletTable
+//PUT request: /updateWallet/:id
+//GET request: /getWallet and /getWallet/:id
 const express = require('express');
 const updateWalletAfterGame = require('../controllers/putWalletGameController');
 const getWalletDetails = require('../controllers/getWalletController');
