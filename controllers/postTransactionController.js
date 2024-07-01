@@ -1,5 +1,5 @@
 const connection = require('../config/db');
-
+//POST request to create a new transaction entry after the cashback activity game is played and the points are earned
 const postTransactionDetails = {
     postTransactionData: async (req, res,next) => {
         const { id } = req.params; 
