@@ -1,3 +1,4 @@
+//router to handle the GET request : /getBrandDetails
 const express = require('express');
 const errorHandler = require('../middleware/errorHandlingMiddleware');
 const brandDetails = require('../controllers/getBrandDetailsController');
