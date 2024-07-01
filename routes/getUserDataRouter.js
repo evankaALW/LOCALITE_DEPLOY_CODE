@@ -1,3 +1,4 @@
+//routes file to handle the GET request : /getLoginData and /getLoginData/:id
 const express = require('express');
 const errorHandler = require('../middleware/errorHandlingMiddleware');
 
