@@ -1,3 +1,4 @@
+//routes file to handle the POST request : /addActivityDetails
 const express = require('express');
 const errorHandler = require('../middleware/errorHandlingMiddleware');
 const postActivityDetails = require('../controllers/postActivityController');
