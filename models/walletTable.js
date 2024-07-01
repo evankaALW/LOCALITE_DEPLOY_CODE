@@ -1,7 +1,7 @@
 const {DataTypes} = require("sequelize")
 const seque = require('../config/db')
 
-
+//table to store wallet details of each user
 const walletTable = seque.define('walletTable', {
     id:{
         type:DataTypes.INTEGER,
