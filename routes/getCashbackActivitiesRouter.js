@@ -1,3 +1,4 @@
+//routes file to handle the GET request : /getActivityCashback
 const express = require('express');
 const errorHandler = require('../middleware/errorHandlingMiddleware');
 const getActivityCashbackDetails = require('../controllers/getCashbackActivitiesController');
