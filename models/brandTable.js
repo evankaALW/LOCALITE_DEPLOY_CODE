@@ -1,6 +1,6 @@
 const {DataTypes} = require("sequelize")
 const seque = require('../config/db')
-
+//table to store the entries of brands
 
 const brandTable = seque.define('brandTable', {
     id:{
