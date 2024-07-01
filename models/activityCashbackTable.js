@@ -1,7 +1,7 @@
 const {DataTypes} = require("sequelize")
 const seque = require('../config/db')
 const brandTable = require('./brandTable')
-
+//activityCashbackTable - table to store the astivity cashback games
 const activityCashbackTable = seque.define('activityCashbackTable', {
     id:{
         type:DataTypes.INTEGER,
