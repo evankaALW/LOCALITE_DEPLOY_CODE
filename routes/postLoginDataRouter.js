@@ -1,3 +1,4 @@
+//router to handle the /postLoginData POST request
 const express = require('express');
 const errorHandler = require('../middleware/errorHandlingMiddleware');
 
