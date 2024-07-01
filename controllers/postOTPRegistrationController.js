@@ -1,6 +1,6 @@
 const https = require('https');
 
-exports.sendOtp = (req, res) => {
+exports.sendOtp = (req, res) => {//POST request to send the OTP to the given mobile no during registration
     const { mobileNumber } = req.body;
     if (!mobileNumber) {
         return res.status(400).json({ error: "Mobile number is required." });
@@ -42,7 +42,7 @@ exports.sendOtp = (req, res) => {
     request.end();
 };
 
-exports.verifyOtp = (req, res) => {
+exports.verifyOtp = (req, res) => {//POST request to verify the OTP from the given mobile no during registration
     const { otp, mobileNumber } = req.body;
     if (!otp || !mobileNumber) {
         return res.status(400).json({ error: "OTP and mobile number are required." });
