@@ -1,11 +1,11 @@
 const connection = require('../config/db'); 
-
+//controller code to fetch the details from userTable, as per the GET request : /getLoginData or /getLoginData/:id
 const userTableController = {
     getUserTable: async (req, res,next) => {
         try {
            
             const { id } = req.params;
-            if (id) {                // Execute another query if id exists
+            if (id) { // Execute select query filtering the user id if id exists in the url params
                     const query = `SELECT * FROM userTable WHERE id = ${id}`;
                     const [result] = await connection.query(query);
                     if (result.length > 0) {
@@ -14,7 +14,7 @@ const userTableController = {
                         return res.status(404).json({ message: `Error retrieving getUserTable with id ${id}. Please try again` });
                     }
             }
-            else{
+            else{//if GET request of all users, id not present in the url params
                     const query = 'SELECT * FROM userTable';
                     const [results] = await connection.query(query);
                     if(results){
