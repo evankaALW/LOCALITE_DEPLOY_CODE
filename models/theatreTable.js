@@ -1,7 +1,7 @@
 const {DataTypes} = require("sequelize")
 const seque = require('../config/db')
 
-
+//table to store the theater entries - NOT USED NOW , NOW SEPERATE THEATER SYSTEM IN MONGODB IS USED
 const theatreTable = seque.define('theatreTable', {
     id:{
         type:DataTypes.INTEGER,
