@@ -1,6 +1,6 @@
 const { Sequelize } = require('sequelize');
 require('dotenv').config();
-
+//code to make connection with the MySQL db by providing mysql credentials, connection made with help of sequelize library
 const seque = new Sequelize(
   process.env.DB_NAME,
   process.env.DB_USER,
