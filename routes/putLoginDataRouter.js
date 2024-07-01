@@ -1,3 +1,4 @@
+//router code to handle the PUT request of /updateLoginData/:id
 const express = require('express');
 const errorHandler = require('../middleware/errorHandlingMiddleware');
 const updateUserDetails = require('../controllers/putLoginDataController');
