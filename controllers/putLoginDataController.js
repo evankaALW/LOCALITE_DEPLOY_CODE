@@ -2,7 +2,7 @@ const connection = require('../config/db');
 const { format } = require('date-fns');
 const SHA256 = require( "crypto-js/sha256" );
 
-
+//PUT request to edit the user details 
 const updateUserDetails = {
     updateUserData: async (req, res,next) => {
         const { id } = req.params; 
