@@ -1,3 +1,4 @@
+//router code to handle the POST request of /registerUser
 const express = require('express');
 const errorHandler = require('../middleware/errorHandlingMiddleware');
 const postRegistrationData = require('../controllers/postRegistrationData');
