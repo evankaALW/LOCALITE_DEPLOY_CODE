@@ -1,5 +1,5 @@
 const connection = require('../config/db');
-
+// PUT request to change the activate value of userTable, 0 - false ( user is not permitted to login into the app ) ; 1 - true ( user is permitted to login into the app )
 const updateActivateUser = {
     updateActivateToggle: async (req, res,next) => {
         try{
