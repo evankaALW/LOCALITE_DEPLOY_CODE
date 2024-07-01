@@ -3,7 +3,7 @@ const seque = require('../config/db');
 const brandTable = require('./brandTable');
 const theatreTable = require('./theatreTable');
 
-
+//table to store user entries
 const userTable = seque.define('userTable', {
 id:{
     type: DataTypes.INTEGER,
